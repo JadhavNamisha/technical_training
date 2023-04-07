@@ -1,0 +1,7 @@
+services:
+  twitter_card.meta_tag_extractor:
+    class: Drupal\twitter_card\Helper\MetaTagExtractor
+  cache.backend.file_system:
+    class: Drupal\twitter_card\Cache\Backend\FileSystemBackendFactory
+    arguments: ['@file_system', '@settings']
+

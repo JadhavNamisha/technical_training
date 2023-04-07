@@ -1,0 +1,5 @@
+name: "Twitter Card Link"
+package: Technical Training
+type: module
+description: Create first link similar to twitter card
+core_version_requirement: ^8 || ^9
