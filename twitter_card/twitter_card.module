@@ -1,0 +1,35 @@
+<?php
+
+/**
+ *  Implements hook_preprocess_node().
+ */
+
+ /*function twitter_card_preprocess_node(&$variables){
+  if ($variables['node']->getType() == 'article') {
+    $body_text = $variables['content']['field_body_article'][0]['#text'];
+    $regex_URL = "/(http|https)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+    preg_match($regex_URL, $body_text, $urls);
+    $first_link = substr($urls[0], 0, strpos($urls[0],'"'));
+    $meta_tags = get_meta_tags($first_link);
+    $twitter_meta_data = [
+      'desc' => $meta_tags['description'],
+      'title' => $meta_tags['twitter:title'],
+      'image' => $meta_tags['twitter:image'],
+    ];
+    $variables['content']['twitter-data'] = [
+      '#theme' => 'twitter_cards',
+      '#twitter_data' => $twitter_meta_data,
+    ];
+  }
+ }*/
+
+ function twitter_card_theme() {
+  $themes = [];
+  $themes['twitter_cards'] = [
+    'template' => 'custom-twitter-cards',
+    'variables' => [
+      'twitter_data' => [],
+    ]
+  ];
+  return $themes;
+}
